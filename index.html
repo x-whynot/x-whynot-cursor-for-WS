@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Cursor</title>
+    <style>
+        * {
+            cursor: none; /* Убираем стандартный курсор для всех элементов */
+        }
+
+        body {
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Убираем прокрутку для лучшего эффекта */
+        }
+
+        .cursor {
+            width: 40px; /* Установите размеры под ваше изображение */
+            height: 40px; /* Установите размеры под ваше изображение */
+            background: url('./img/cursor.png') no-repeat center center;
+            background-size: contain; /* Адаптирует изображение под размеры курсора */
+            position: absolute;
+            transform: translate(-50%, -50%);
+            pointer-events: none; /* Чтобы элемент не захватывал события мыши */
+            z-index: 1000; /* Убедитесь, что курсор будет выше остальных элементов */
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor" id="cursor"></div>
+    <script src="./js/cursor.js"></script>
+</body>
+</html>
